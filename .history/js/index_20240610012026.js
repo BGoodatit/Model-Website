@@ -9,9 +9,9 @@ ANIMATION AFTER PAGE LOAD
 PARALLAX ON HOME PAGE
 CURSOR FOLLOWER ON HOME PAGE
 NAVIGATION ANIMATION
-PAGE TRANSITIONS
+PAGE TRANSITIONS 
 GALLERY PAGE SLIDER
-services PAGE PARALLAX SLIDER
+WORK PAGE PARALLAX SLIDER
 CONTACT FORM SUBMIT
 -----------
 ==========
@@ -84,8 +84,8 @@ $(document).ready(function() {
               .attr({
                 'data-swiper-parallax': 1 * swiper.width,
               });
-
-
+  
+           
           }
         },
         resize: function() {
@@ -104,10 +104,10 @@ $(document).ready(function() {
         nextEl: '.slider-controls .next-ctrl',
         prevEl: '.slider-controls .prev-ctrl'
       },
-      observer: true,
+      observer: true,  
       observeParents: true,
     };
-
+  
     parallaxSlider = new Swiper('.parallax-slider', parallaxSliderOptions);
     $(window).on('resize', function() {
       parallaxSlider.destroy();
@@ -122,7 +122,7 @@ $(document).ready(function() {
         },1600)
       }))
     })
-
+    
 
   });
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
 
 
 
-
+  
   //CURSOR FOLLOWER
 
             function gallerylinkhome(){
@@ -153,7 +153,7 @@ $(document).ready(function() {
                   top:'1%',
                   right:'2%',
                   x:0,
-                  y:0,
+                  y:0, 
                  })
                }
                $('.text-home-page').on('mousemove',cursorposition);
@@ -182,7 +182,7 @@ $(function(){
       stagger:-.3,
       delay:0,
       onComplete :function(){
-        gsap.to('.navigation-links',.6,{opacity:1,stagger:.1,pointerEvents:'all'})
+        gsap.to('.navigation-links',.6,{opacity:1,stagger:.1,pointerEvents:'all'}) 
         gsap.to('#navigation-content',.6,{pointerEvents:'all'})
         gsap.to('.navigation-close',.6,{opacity:1,pointerEvents:'all'})
         gsap.to('.social-links',.6,{opacity:1,stagger:.1,pointerEvents:'all'})
@@ -191,7 +191,7 @@ $(function(){
   })
 
   $('.navigation-close').on('click',function(){
-        gsap.to('.navigation-back',1.5,{y:'-100%',ease:'Expo.easeInOut',delay:1,stagger:.3,})
+        gsap.to('.navigation-back',1.5,{y:'-100%',ease:'Expo.easeInOut',delay:1,stagger:.3,})    
         gsap.to('.navigation-links',.6,{opacity:0,stagger:-.1,pointerEvents:'none'})
         gsap.to('.navigation-close',.6,{opacity:0,pointerEvents:'none'})
         gsap.to('#navigation-content',0,{pointerEvents:'none'})
@@ -211,14 +211,14 @@ $(function(){
 
 
 
-//PAGE TRANSITIONS
+//PAGE TRANSITIONS 
 
 $(function pagetransition(){
   var links = [...document.querySelectorAll('.page-link')]; // GET ALL THE LINKS WITH CLASS 'PAGE LINK'
   var breaker = document.querySelector('#breaker'); //GET THE BREAKER(THE SCREEN THAT ANIMATES ON CLICK ON A LINK)
 
-  links.forEach(link => link.addEventListener('click',function(){ // CLICK ON ANY LINK WILL DO THE FOLLOWING
-
+  links.forEach(link => link.addEventListener('click',function(){ // CLICK ON ANY LINK WILL DO THE FOLLOWING 
+     
     var page =  link.getAttribute("href"); //GET THE VALUE OF HREF ATTRIBUTE FOR THE LLINK WHICH HAS BEEN CLICKED
 
     if(document.querySelector(page)){
@@ -226,33 +226,33 @@ $(function pagetransition(){
       //DISPLAYBREAKER FUNCTION
       function displaybreaker(){
           breaker.style.display = 'block'; // ANIMATE BREAKER(SCREEN)
-
+ 
           breaker.addEventListener('animationend',function(){
               this.style.display="none";  //WHEN ITS COMPLETELY ANIMATED SET IT TO DEFAULT
           })
-          gsap.to('.navigation-back',1.5,{y:'-100%',ease:'Expo.easeInOut',delay:1,stagger:.3,})   // PULL UP THE NAVIGATION IF ITS DOWN
+          gsap.to('.navigation-back',1.5,{y:'-100%',ease:'Expo.easeInOut',delay:1,stagger:.3,})   // PULL UP THE NAVIGATION IF ITS DOWN 
           gsap.to('.navigation-links',.6,{opacity:0,stagger:-.1,pointerEvents:'none'})
           gsap.to('.navigation-close',.6,{opacity:0,pointerEvents:'none'})
           gsap.to('#navigation-content',.6,{pointerEvents:'none'})
           gsap.to('.social-links',.6,{opacity:0,stagger:-.1,pointerEvents:'none'})
       }
       //DISPLAYBREAKER FUNCTION
-
-
+  
+ 
       displaybreaker()   // CALL DISPLAYBREAKER FUNCTION
-
-
+ 
+ 
       //  CHANGEPAGE FUNCTION
       function changepage(){
-
+ 
          var pages = links.map(a=>a.getAttribute("href")) // GET ALL PAGES
          setTimeout(function(){
           pages.forEach(a=>document.querySelector(a).style.display='none'); //SET ALL PAGES TO DISPLAY='NONE'
           document.querySelector(page).style.display ='block'; //SET THE STYLE OF THEE PAGE WHICH HAS BEEN CALLED TO DISPLAY 'BLOCK'
-         },1500)
-       }
+         },1500) 
+       }    
       //  CHANGEPAGE FUNCTION
-
+      
       changepage()   // CALL CHANGEPAGE FUNCTION
     }
   }))
@@ -286,7 +286,7 @@ new Swiper('#gallery .swiper-container', {
     type: 'progressbar',
   },
   mousewheel: true,
-  observer: true,
+  observer: true,  
   observeParents: true,
 });
 // SLIDER ON GALLERY PAGE
@@ -299,7 +299,7 @@ new Swiper('#gallery .swiper-container', {
 
 
 
-//PARALLAX SLIDER ON services PAGE
+//PARALLAX SLIDER ON WORK PAGE
 
 $(document).ready(function() {
   var parallaxSlider2;
@@ -310,7 +310,7 @@ $(document).ready(function() {
     centeredSlides: true,
     direction:'vertical',
     mousewheel: true,
-    observer: true,
+    observer: true,  
     observeParents: true,
     on: {
       init: function() {
@@ -338,30 +338,30 @@ $(document).ready(function() {
   };
 
 
-    parallaxSlider2 = new Swiper('#services .swiper-container', parallaxSliderOptions2);
+    parallaxSlider2 = new Swiper('#work .swiper-container', parallaxSliderOptions2);
 
 
   $(window).on('resize', function() {
     parallaxSlider2.destroy();
-    parallaxSlider2 = new Swiper('#services .swiper-container', parallaxSliderOptions2);
+    parallaxSlider2 = new Swiper('#work .swiper-container', parallaxSliderOptions2);
   });
 
   $(function(){
-    var a = document.querySelectorAll('[href="#services"]');
+    var a = document.querySelectorAll('[href="#work"]');
     a.forEach(b=>b.addEventListener('click',function(){
       setTimeout(function(){
         parallaxSlider2.destroy();
-        parallaxSlider2 = new Swiper('#services .swiper-container', parallaxSliderOptions2);
+        parallaxSlider2 = new Swiper('#work .swiper-container', parallaxSliderOptions2);
       },1500)
     }))
   })
 });
 
 
-//PARALLAX SLIDER ON services PAGE
+//PARALLAX SLIDER ON WORK PAGE
 
 
-  //CONTACT FORM
+  //CONTACT FORM 
 
 
   var submit = document.getElementById('submit');
@@ -374,9 +374,9 @@ $(document).ready(function() {
     var email = $('#email');
     var subject = $("#subject");
     var body = $("#body");
+    
 
-
-
+    
 
     if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body) ) {
         if($("#email").val().match(mailformat)){
@@ -390,12 +390,12 @@ $(document).ready(function() {
                   email: email.val(),
                   subject: subject.val(),
                   body: body.val()
-
+                  
               }, success: function (response) {
                    $('form')[0].reset();
                    $('#submit').text("Sent!!!");
               }
-
+              
            });
         }
         else{
@@ -423,7 +423,7 @@ function isNotEmpty(caller) {
 submit.addEventListener('click',sendEmail)
 
 
-  //CONTACT FORM
+  //CONTACT FORM 
 
 
 

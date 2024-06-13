@@ -11,7 +11,7 @@ CURSOR FOLLOWER ON HOME PAGE
 NAVIGATION ANIMATION
 PAGE TRANSITIONS
 GALLERY PAGE SLIDER
-services PAGE PARALLAX SLIDER
+WORK PAGE PARALLAX SLIDER
 CONTACT FORM SUBMIT
 -----------
 ==========
@@ -299,7 +299,7 @@ new Swiper('#gallery .swiper-container', {
 
 
 
-//PARALLAX SLIDER ON services PAGE
+//PARALLAX SLIDER ON WORK PAGE
 
 $(document).ready(function() {
   var parallaxSlider2;
@@ -358,7 +358,7 @@ $(document).ready(function() {
 });
 
 
-//PARALLAX SLIDER ON services PAGE
+//PARALLAX SLIDER ON WORK PAGE
 
 
   //CONTACT FORM

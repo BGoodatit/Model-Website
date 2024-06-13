@@ -299,7 +299,7 @@ new Swiper('#gallery .swiper-container', {
 
 
 
-//PARALLAX SLIDER ON services PAGE
+//PARALLAX SLIDER ON WORK PAGE
 
 $(document).ready(function() {
   var parallaxSlider2;
